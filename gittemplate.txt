@@ -1,4 +1,13 @@
 #Capitalized, short (50 chars or less) summary
+#Prefix with either
+#- build
+#- ci
+#- docs
+#- feat
+#- fix
+#- perf
+#- refactor
+#- test
 
 #More detailed explanatory text, if necessary.  Wrap it to about 72
 #characters or so.  In some contexts, the first line is treated as the
