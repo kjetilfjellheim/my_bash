@@ -61,3 +61,17 @@ git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 git config --global user.name "Kjetil Fjellheim"
 git config --global user.email kjetil@forgottendonkey.net
 git config --global commit.template ~/Code/my_bash/gittemplate.txt
+
+update_repos() {       
+   token=`gh auth token`
+   if [[ ${token} == "" ]]; then
+       echo "Not logged in"
+       gh auth login
+       token=`gh auth token`       
+   else
+       echo "Logged in"
+   fi   
+   repos=`curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${token}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/users/kjetilfjellheim/repos | jq '.[] | .ssh_url' | cut -d'/' -f2 | sed 's/\.git\"//g' | tr '\n' ' '`
+   echo "${repos}"
+   complete -W "${repos}" clone
+}
