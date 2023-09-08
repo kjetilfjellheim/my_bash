@@ -8,7 +8,7 @@ To use just clone the project and add source ./&lt;Path to my_bash.sh&gt; in the
 This has the following functionality
 1. Added common colors to use in the terminal.
 2. Updates the terminal prompt to make it more
-- &gt;Username&gt;@&lt;Hostname&gt; &lt;Path&gt; (&lt;Git information&gt;)
+- &lt;Username&gt;@&lt;Hostname&gt; &lt;Path&gt; (&lt;Git information&gt;)
 3. ls command colors.
 4. Includes my preferred mergetool, difftool and core editor for git.
 5. My username, email and and commit template
