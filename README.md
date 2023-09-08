@@ -1,4 +1,4 @@
-# Ny bash
+# My bash
 <h2>Description</h2>
 These are my personal bash script and definitions used on my personal computers.
 
