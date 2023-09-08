@@ -84,7 +84,7 @@ update_repos() {
    else
        echo "Logged in"
    fi   
-   repos=`curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${token}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/users/${MY_GIT_USERNAME}/repos | jq '.[] | .ssh_url' | cut -d'/' -f2 | sed 's/\.git\"//g' | tr '\n' ' '`
+   repos=`curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${token}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/users/${MY_GIT_USERNAME}/repos?per_page=100 | jq '.[] | .ssh_url' | cut -d'/' -f2 | sed 's/\.git\"//g' | tr '\n' ' '`
    echo "${repos}"
    complete -W "${repos}" clone
 }
