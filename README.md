@@ -21,11 +21,7 @@ The command will log into github and make a rest request to get github repos for
 - Comand: notify
 
 <h2>Personalization</h2>
-MY_GIT_USERNAME=&lt;Git username&gt;
-MY_GIT_NAME="&lt;Git name&gt;"
-MY_GIT_EMAIL="&lt;Git email&gt;"
-MY_GIT_PATH="&lt;Path to where to clone&gt;"
-
-
-
-
+MY_GIT_USERNAME=&lt;Git username&gt;<br>
+MY_GIT_NAME="&lt;Git name&gt;"<br>
+MY_GIT_EMAIL="&lt;Git email&gt;"<br>
+MY_GIT_PATH="&lt;Path to where to clone&gt;"<br>
