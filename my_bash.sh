@@ -1,5 +1,10 @@
 #!/bin/bash
 
+export MY_GIT_USERNAM=E"kjetilfjellheim"
+export MY_GIT_NAME="Kjetil Fjellheim"
+export MY_GIT_EMAIL="kjetil@forgottendonkey.net"
+export MY_GIT_PATH="~/Code"
+
 #Common color information
 LIGHTGRAY="\033[0;37m"
 WHITE="\033[1;37m"
@@ -50,16 +55,16 @@ git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 
 #My git information
-git config --global user.name "Kjetil Fjellheim"
-git config --global user.email kjetil@forgottendonkey.net
+git config --global user.name "${MY_GIT_NAME}"
+git config --global user.email "${MY_GIT_EMAIL}"
 #Git commit template
-git config --global commit.template ~/Code/my_bash/gittemplate.txt
+git config --global commit.template ${MY_GIT_PATH}/my_bash/gittemplate.txt
 
 #Git clone function 
 clone() {
-    echo Cloning git@github.com\:kjetilfjellheim/${1}.git to ~/Code/$1
-    cd ~/Code
-    git clone git@github.com:kjetilfjellheim/${1}.git ${1}
+    echo Cloning git@github.com\:${MY_GIT_USERNAME}/${1}.git to ${MY_GIT_PATH}/$1
+    cd ${MY_GIT_PATH}
+    git clone git@github.com:${MY_GIT_USERNAME}/${1}.git ${1}
     cd $1
     echo "Completed cloning"
 }
@@ -79,7 +84,7 @@ update_repos() {
    else
        echo "Logged in"
    fi   
-   repos=`curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${token}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/users/kjetilfjellheim/repos | jq '.[] | .ssh_url' | cut -d'/' -f2 | sed 's/\.git\"//g' | tr '\n' ' '`
+   repos=`curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${token}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/users/${MY_GIT_USERNAME}/repos | jq '.[] | .ssh_url' | cut -d'/' -f2 | sed 's/\.git\"//g' | tr '\n' ' '`
    echo "${repos}"
    complete -W "${repos}" clone
 }
