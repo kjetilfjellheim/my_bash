@@ -1,9 +1,9 @@
 #!/bin/bash
 
-export MY_GIT_USERNAM=E"kjetilfjellheim"
+export MY_GIT_USERNAME="kjetilfjellheim"
 export MY_GIT_NAME="Kjetil Fjellheim"
 export MY_GIT_EMAIL="kjetil@forgottendonkey.net"
-export MY_GIT_PATH="~/Code"
+export MY_GIT_PATH="/home/kjetil/Code"
 
 #Common color information
 LIGHTGRAY="\033[0;37m"
@@ -75,7 +75,7 @@ notify() {
 }
 
 #Update git clone repo completion
-update_repos() {       
+update_repos_completion() {       
    token=`gh auth token`
    if [[ ${token} == "" ]]; then
        echo "Not logged in"
@@ -88,3 +88,4 @@ update_repos() {
    echo "${repos}"
    complete -W "${repos}" clone
 }
+
