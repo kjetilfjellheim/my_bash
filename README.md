@@ -15,7 +15,7 @@ This has the following functionality
 6. Clone function to simplify git clone command with repo completion.
 - Command: clone &lt;repo name&gt;
 7. Function to update completion information for github repos.
-- Command: update_repos
+- Command: update_repos_completion
 The command will log into github and make a rest request to get github repos for a user.
 8. Notify function to show information if running long terminal scripts.
 - Comand: notify
