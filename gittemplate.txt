@@ -20,7 +20,7 @@
 #or "Fixes bug."  This convention matches up with commit messages generated
 #by commands like git merge and git revert.
 
-#Include any breaking changes.
+#Breaking changes:
 
 #Resolves: #123
 
